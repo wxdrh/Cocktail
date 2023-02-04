@@ -1,0 +1,100 @@
+{
+  "type": "object",
+  "properties": {
+    "drinks": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "idDrink": {
+              "type": "string"
+            },
+            "strDrink": {
+              "type": "string"
+            },
+            "strDrinkAlternate": {
+              "type": "null"
+            },
+            "strTags": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "strVideo": {
+              "type": "null"
+            },
+            "strCategory": {
+              "type": "string"
+            },
+            "strIBA": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "strAlcoholic": {
+              "type": "string"
+            },
+            "strGlass": {
+              "type": "string"
+            },
+            "strInstructions": {
+              "type": "string"
+            },
+            "strDrinkThumb": {
+              "type": "string"
+            },
+            "strIngredient1": {
+              "type": "string"
+            },
+            "strMeasure1": {
+              "type": "string"
+            },
+            "strImageSource": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "strImageAttribution": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "strCreativeCommonsConfirmed": {
+              "type": "string"
+            },
+            "dateModified": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "idDrink",
+            "strDrink",
+            "strDrinkAlternate",
+            "strTags",
+            "strVideo",
+            "strCategory",
+            "strIBA",
+            "strAlcoholic",
+            "strGlass",
+            "strInstructions",
+            "strDrinkThumb",
+            "strIngredient1",
+            "strMeasure1",
+            "strImageSource",
+            "strImageAttribution",
+            "strCreativeCommonsConfirmed",
+            "dateModified"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "drinks"
+  ]
+}
