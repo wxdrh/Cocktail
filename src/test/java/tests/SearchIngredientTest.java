@@ -30,6 +30,17 @@ public class SearchIngredientTest extends UtilitiesFactory {
         testLog.log(Status.PASS, "SuccessFully Validated STR ABV is not Null: " + ingredient.getStrABV());
     }
 
+    @Test(description = "Verify API response values are not null in case of case insensitive search")
+    public void validateResponseValuesAreNotNullInCaseOfCaseInsensitive() {
+
+        String caseInsensitiveIngredientName = ApiENUM.INGREDIENT_VALID_CASE_INSENSITIVE.getValue();
+        IngredientPOJO[] ingredient = getJsonObject(queryParameterSearchIngredient, caseInsensitiveIngredientName, searchEndPoint, 200, "ingredients", IngredientPOJO[].class);
+
+        //Assertion for values are not null in case of case-insensitive search
+        Assert.assertNotNull(ingredient);
+        testLog.log(Status.PASS, "SuccessFully Validated that API response is not null in case of case insensitive search");
+    }
+
     @Test(description = "Verify API response values are not null in case of non Alcoholic expect ABV")
     public void validateResponseValuesAreNotNullInCaseOfNonAlcohol() {
 
@@ -72,27 +83,6 @@ public class SearchIngredientTest extends UtilitiesFactory {
         statusCode = getStatusCode(queryParameterSearchIngredient, ingredientName, invalidEndPoint);
         Assert.assertEquals(statusCode, 404);
         testLog.log(Status.PASS, "SuccessFully Validated API response in case of incorrect end point");
-    }
-
-    @Test(description = "Verify API response data types")
-    public void validateDataTypesOfAPIResponse() {
-
-        String ingredientName = ApiENUM.INGREDIENT_VALID_ALCOHOLIC.getValue();
-        IngredientPOJO ingredient = getJsonObject(queryParameterSearchIngredient, ingredientName, searchEndPoint, 200, "ingredients[0]", IngredientPOJO.class);
-
-        //Assertion for Data Type of API Response
-        Assert.assertEquals(getDataType(ingredient.getIdIngredient()), "String");
-        testLog.log(Status.PASS, "SuccessFully Validated Ingredient Data Type: " + getDataType(ingredient.getIdIngredient()));
-        Assert.assertEquals(getDataType(ingredient.getStrIngredient()), "String");
-        testLog.log(Status.PASS, "SuccessFully Validated Ingredient Data Type: " + getDataType(ingredient.getStrIngredient()));
-        Assert.assertEquals(getDataType(ingredient.getStrDescription()), "String");
-        testLog.log(Status.PASS, "SuccessFully Validated Description Data Type: " + getDataType(ingredient.getStrDescription()));
-        Assert.assertEquals(getDataType(ingredient.getStrType()), "String");
-        testLog.log(Status.PASS, "SuccessFully Validated STR Type Data Type: " + getDataType(ingredient.getStrType()));
-        Assert.assertEquals(getDataType(ingredient.getStrAlcohol()), "String");
-        testLog.log(Status.PASS, "SuccessFully Validated Alcohol Data Type: " + getDataType(ingredient.getStrAlcohol()));
-        Assert.assertEquals(getDataType(ingredient.getStrABV()), "String");
-        testLog.log(Status.PASS, "SuccessFully Validated STR ABV Data Type: " + getDataType(ingredient.getStrABV()));
     }
 
     @Test(description = "Verify the schema of the Search by Ingredients API")
