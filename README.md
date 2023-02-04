@@ -10,10 +10,18 @@ We have proposed some requirements for the cocktail API (this list is not exhaus
 # Your task is to:
 1.	Write a minimum set of test cases to test the requirements below
 2.	Write two additional test cases that are not covered by the requirements below.
-3.	Automate the test cases using a language/framework of your choice.
-4.	Suggest two non-functional tests that you would design
-5.	Suggest a framework that could be used to automate the non-functional test above.
-6.	Send your tests with instructions on how to execute the automated tests within 3 days.
+3.	Automate the test cases using a language/framework of your choice.<br/>
+    **I have created a Framework with RestAssured,TestNG,Maven,ExtentReport for Reporting Purposes in Java Language.<br/>
+    I have also implemented POJO classes using jackson for serialization purposes to handle long api response in an efficient way.**
+4.	Suggest two non-functional tests that you would design<br/>
+      **a. Load Testing: To test the cocktail API performance under heavy traffic or concurrent user requests.<br/>
+      b. Security Testing: To test the cocktail API security against threats such as injection attacks and other security vulnerabilities.<br/>**
+5.	Suggest a framework that could be used to automate the non-functional test above.<br/>
+    **a. For Load Testing we can you Jmeter as it is an open source tool and been widely used and have a huge community of users, It provides a GUI based interface and also we can do scripting on it in Java.<br/>
+    b. For Security Testing against Injection Attacks we can OWASP ZAP.**
+6.	Send your tests with instructions on how to execute the automated tests within 3 days.<br/>
+    **a. As I am using mvn as build automation tool so test can be executed by using _mvn clean test -Dsurefire.suiteXmlFiles=src/test/java/runnerxmls/runner.xml_ this command in terminal.Before executing command maven should be installed<br/>
+    b. Tests can also be executed by doing right on _runner.xml_ and click on run. Before this IntelliJ or Eclipse should be installed.**
 7.	Always explain yourself clearly and let us know if any assumptions were made.
 
 
