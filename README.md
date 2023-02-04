@@ -21,7 +21,8 @@ We have proposed some requirements for the cocktail API (this list is not exhaus
     b. For Security Testing against Injection Attacks we can OWASP ZAP.**
 6.	Send your tests with instructions on how to execute the automated tests within 3 days.<br/>
     **a. As I am using mvn as build automation tool so test can be executed by using _mvn clean test -Dsurefire.suiteXmlFiles=src/test/java/runnerxmls/runner.xml_ this command in terminal.Before executing command maven should be installed<br/>
-    b. Tests can also be executed by doing right on _runner.xml_ and click on run. Before this IntelliJ or Eclipse should be installed.**
+      b. Tests can also be executed by doing right on _runner.xml_ and click on run. Before this IntelliJ or Eclipse should be installed.<br/>
+      c. Execution report is generated in target/executionReports folder**
 7.	Always explain yourself clearly and let us know if any assumptions were made.
 
 
